@@ -6,9 +6,9 @@ console.log(`Hello, ${nameOfPlayer}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const gameEvenNumbers = (num) => {
-    const questionForm = console.log(`Question: ${num}`);
+    const questionForm = `Question: ${num}`;
 
-    questionForm;
+    console.log(questionForm);
 
     const answer = readlineSync.question('Your answer: ');
 
