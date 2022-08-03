@@ -12,11 +12,10 @@ const gameEvenNumbers = (num) => {
 
     const answer = readlineSync.question('Your answer: ');
 
+    let correctAnswer = num % 2 === 0 ? 'yes' : 'no';
     let opociteAnswer = answer === 'yes' ? 'no' : 'yes';
 
-    if (num % 2 === 0 && answer === 'yes') {
-      console.log('Correct!');
-    } else if (num % 2 !== 0 && answer === 'no') {
+    if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${opociteAnswer}'. Let's try again, ${nameOfPlayer}!`);
