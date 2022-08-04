@@ -17,4 +17,4 @@ gameLogic(gameCondicions, numbersForGame, correctAnswer(numbersForGame));
 
 };
 
-export default evenGame();
+export default evenGame;
