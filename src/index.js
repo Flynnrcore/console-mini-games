@@ -17,10 +17,11 @@ const gameLogic = (gameCondicions, expressions, correctAnswer) => {
 
     if (answerOfPlayer !== correctAnswer[i]) {
       console.log(`'${answerOfPlayer}' is wrong answer ;(. Correct answer was '${correctAnswer[i]}'. Let's try again, ${nameOfPlayer}!`);
-      return winCount = 0;
-  }
+      winCount = 0;
+      return winCount;
+    }
     console.log('Correct!');
-}
+  }
   const congratulations = `Congratulations, ${nameOfPlayer}!`;
   if (winCount === 1) {
     console.log(congratulations);

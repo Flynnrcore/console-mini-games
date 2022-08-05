@@ -7,35 +7,35 @@ const randomizeExpressions = (numbers) => {
   const operandsArray = ['+', '-', '*'];
   const rand = (array) => {
     return Math.floor(Math.random() * array.length);
-  }
+  };
   for (let i = 0; i < 3; i += 1) {
     resultArray.push(`${numbers[rand(numbers)]} ${operandsArray[rand(operandsArray)]} ${numbers[rand(numbers)]}`);
   }
   return resultArray;
 };
 
-const numbersForGame = randomizeExpressions([4, 10, 11, 25, 7]);
+const numbersForGame = randomizeExpressions([2, 3, 4, 5, 7, 10, 12, 11, 20, 25]);
 
-const correctAnswer = (numbersForGame) => { 
-    const answerArray = [];
-    let result = 0;
+const correctAnswer = (numbersOfGame) => {
+  const answerArray = [];
+  let result = 0;
 
-    for (const item of numbersForGame) {
-      let itemArr = item.split(' ');
-      switch (itemArr[1]) {
-        case '+':
-          result = +itemArr[0] + +itemArr[2];
-          break;
-        case '-':
-          result = +itemArr[0] - +itemArr[2];
-          break;
-        case '*':
-          result = +itemArr[0] * +itemArr[2];
-          break;
-      }
-      answerArray.push(String(result));
+  for (const item of numbersOfGame) {
+    const itemArr = item.split(' ');
+    switch (itemArr[1]) {
+      case '+':
+        result = +itemArr[0] + +itemArr[2];
+        break;
+      case '-':
+        result = +itemArr[0] - +itemArr[2];
+        break;
+      case '*':
+        result = +itemArr[0] * +itemArr[2];
+        break;
     }
-    return answerArray;
+    answerArray.push(String(result));
+  }
+  return answerArray;
 };
 
 const calculationGame = () => {
@@ -43,5 +43,3 @@ const calculationGame = () => {
 };
 
 export default calculationGame;
-
-
