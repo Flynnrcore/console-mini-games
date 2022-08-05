@@ -1,6 +1,5 @@
 import gameLogic from '../index.js';
 
-const evenGame = () => {
 const gameCondicions = 'Answer "yes" if the number is even, otherwise answer "no".';
 const numbersForGame = [15, 6, 7];
 const correctAnswer = (numbersArray) => { 
@@ -11,10 +10,8 @@ const correctAnswer = (numbersArray) => {
     return answerArray;
 };
 
-
-
-gameLogic(gameCondicions, numbersForGame, correctAnswer(numbersForGame));
-
+const evenGame = () => {
+    gameLogic(gameCondicions, numbersForGame, correctAnswer(numbersForGame));
 };
 
 export default evenGame;

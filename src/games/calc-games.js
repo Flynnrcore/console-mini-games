@@ -1,7 +1,7 @@
 import gameLogic from '../index.js';
 
-const calculationGame = () => {
 const gameCondicions = 'What is the result of the expression?';
+
 const randomizeExpressions = (numbers) => {
   const resultArray = [];
   const operandsArray = ['+', '-', '*'];
@@ -18,28 +18,28 @@ const numbersForGame = randomizeExpressions([4, 10, 11, 25, 7]);
 
 const correctAnswer = (numbersForGame) => { 
     const answerArray = [];
-
     let result = 0;
 
     for (const item of numbersForGame) {
-      console.log(item[2]);
-      switch (item) {
-        case item[2] === '+':
-          result = +item[0] + (+itemArr[4]);
-        case item[2] === '-':
-          result = +itemArr[0] - (+itemArr[4]);
-        case item[2] === '*':
-          result = +itemArr[0] * (+itemArr[4]);
+      let itemArr = item.split(' ');
+      switch (itemArr[1]) {
+        case '+':
+          result = +itemArr[0] + +itemArr[2];
+          break;
+        case '-':
+          result = +itemArr[0] - +itemArr[2];
+          break;
+        case '*':
+          result = +itemArr[0] * +itemArr[2];
+          break;
       }
       answerArray.push(String(result));
     }
     return answerArray;
 };
 
-console.log(correctAnswer(numbersForGame));
-
-gameLogic(gameCondicions, numbersForGame, correctAnswer(numbersForGame));
-
+const calculationGame = () => {
+  gameLogic(gameCondicions, numbersForGame, correctAnswer(numbersForGame));
 };
 
 export default calculationGame;
