@@ -15,8 +15,8 @@ const gameLogic = (gameCondicions, expressions, correctAnswer) => {
 
     const answerOfPlayer = readlineSync.question('Your answer: ');
 
-    if (answerOfPlayer !== correctAnswer[i]) {
-      console.log(`'${answerOfPlayer}' is wrong answer ;(. Correct answer was '${correctAnswer[i]}'. Let's try again, ${nameOfPlayer}!`);
+    if (answerOfPlayer !== correctAnswer(expressions[i])) {
+      console.log(`'${answerOfPlayer}' is wrong answer ;(. Correct answer was '${correctAnswer(expressions[i])}'. Let's try again, ${nameOfPlayer}!`);
       winCount = 0;
       return winCount;
     }
