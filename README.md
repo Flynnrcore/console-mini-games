@@ -16,3 +16,6 @@ Greatest common divisor game (brain-gcd): Launch, gameplay, win and loss:
 
 Progression game (brain-gcd): Launch, gameplay, win and loss:
 [![asciicast](https://asciinema.org/a/513155.svg)](https://asciinema.org/a/513155)
+
+Prime game (brain-gcd): Launch, gameplay, win and loss:
+[![asciicast](https://asciinema.org/a/G5vlmwEPycgCaeG2En6DbmaYN.svg)](https://asciinema.org/a/G5vlmwEPycgCaeG2En6DbmaYN)
