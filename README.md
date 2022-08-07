@@ -13,3 +13,6 @@ Calculation game (brain-calc): Launch, gameplay, win and loss:
 
 Greatest common divisor game (brain-gcd): Launch, gameplay, win and loss:
 <a href="https://asciinema.org/a/513151" target="_blank"><img src="https://asciinema.org/a/513151.svg" /></a>
+
+Progression game (brain-gcd): Launch, gameplay, win and loss:
+<a href="https://asciinema.org/a/NIhBxvAvhY1zOawCxdndLwXz3" target="_blank"><img src="https://asciinema.org/a/NIhBxvAvhY1zOawCxdndLwXz3.svg" /></a>
