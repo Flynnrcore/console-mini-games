@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const gameLogic = (gameCondicions, expressions, correctAnswer) => {
+export const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export const gameLogic = (gameCondicions, expressions, correctAnswer) => {
   console.log('Welcome to the Brain Games!');
   const nameOfPlayer = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${nameOfPlayer}!`);
@@ -28,5 +30,3 @@ const gameLogic = (gameCondicions, expressions, correctAnswer) => {
     console.log(congratulations);
   }
 };
-
-export default gameLogic;

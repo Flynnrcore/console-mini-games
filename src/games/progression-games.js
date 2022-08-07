@@ -1,9 +1,8 @@
-import gameLogic from '../index.js';
+import { gameLogic, random } from '../index.js';
 
 const gameCondicions = 'What number is missing in the progression?';
 
 const randomizeExpressions = () => {
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   let startNumber = random(1, 25);
   const numberStep = random(2, 10);
   const sizeProgression = random(5, 10);

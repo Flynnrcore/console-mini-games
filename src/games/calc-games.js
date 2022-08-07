@@ -1,12 +1,12 @@
-import gameLogic from '../index.js';
+import { gameLogic, random } from '../index.js';
 
 const gameCondicions = 'What is the result of the expression?';
 
 const randomizeExpressions = () => {
-  const numbers = [2, 3, 4, 5, 7, 10, 12, 11, 20, 25];
   const operands = ['+', '-', '*'];
-  const random = (array) => Math.floor(Math.random() * array.length);
-  return `${numbers[random(numbers)]} ${operands[random(operands)]} ${numbers[random(numbers)]}`;
+  const firstNumber = random(1, 25);
+  const secondNumber = random(1, 25);
+  return `${firstNumber} ${operands[random(0, 2)]} ${secondNumber}`;
 };
 
 const correctAnswer = (expressionString) => {
