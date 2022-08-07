@@ -2,17 +2,12 @@ import gameLogic from '../index.js';
 
 const gameCondicions = 'What is the result of the expression?';
 
-const randomizeExpressions = (numbers) => {
-  const resultArray = [];
-  const operandsArray = ['+', '-', '*'];
-  const rand = (array) => Math.floor(Math.random() * array.length);
-  for (let i = 0; i < 3; i += 1) {
-    resultArray.push(`${numbers[rand(numbers)]} ${operandsArray[rand(operandsArray)]} ${numbers[rand(numbers)]}`);
-  }
-  return resultArray;
+const randomizeExpressions = () => {
+  const numbers = [2, 3, 4, 5, 7, 10, 12, 11, 20, 25];
+  const operands = ['+', '-', '*'];
+  const random = (array) => Math.floor(Math.random() * array.length);
+  return `${numbers[random(numbers)]} ${operands[random(operands)]} ${numbers[random(numbers)]}`;
 };
-
-const numbersForGame = randomizeExpressions([2, 3, 4, 5, 7, 10, 12, 11, 20, 25]);
 
 const correctAnswer = (expressionString) => {
   let result = 0;
@@ -32,7 +27,7 @@ const correctAnswer = (expressionString) => {
 };
 
 const calculationGame = () => {
-  gameLogic(gameCondicions, numbersForGame, correctAnswer);
+  gameLogic(gameCondicions, randomizeExpressions, correctAnswer);
 };
 
 export default calculationGame;

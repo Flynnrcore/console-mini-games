@@ -9,14 +9,15 @@ const gameLogic = (gameCondicions, expressions, correctAnswer) => {
 
   let winCount = 1;
 
-  for (let i = 0; i < expressions.length; i += 1) {
-    const questionForm = `Question: ${expressions[i]}`;
+  for (let i = 0; i < 3; i += 1) {
+    const questionForExpression = expressions();
+    const questionForm = `Question: ${questionForExpression}`;
     console.log(questionForm);
 
     const answerOfPlayer = readlineSync.question('Your answer: ');
 
-    if (answerOfPlayer !== correctAnswer(expressions[i])) {
-      console.log(`'${answerOfPlayer}' is wrong answer ;(. Correct answer was '${correctAnswer(expressions[i])}'. Let's try again, ${nameOfPlayer}!`);
+    if (answerOfPlayer !== correctAnswer(questionForExpression)) {
+      console.log(`'${answerOfPlayer}' is wrong answer ;(. Correct answer was '${correctAnswer(questionForExpression)}'. Let's try again, ${nameOfPlayer}!`);
       winCount = 0;
       return winCount;
     }

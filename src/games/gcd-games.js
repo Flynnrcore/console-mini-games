@@ -2,17 +2,11 @@ import gameLogic from '../index.js';
 
 const gameCondicions = 'Find the greatest common divisor of given numbers.';
 
-const randomizeExpressions = (numbers) => {
-  const resultArray = [];
-  const rand = (array) => Math.floor(Math.random() * array.length);
-
-  for (let i = 0; i < 3; i += 1) {
-    resultArray.push(`${numbers[rand(numbers)]} ${numbers[rand(numbers)]}`);
-  }
-  return resultArray;
+const randomizeExpressions = () => {
+  const numbers = [4, 6, 8, 9, 12, 18, 24, 25, 30, 42, 48, 50, 100];
+  const random = (array) => Math.floor(Math.random() * array.length);
+  return `${numbers[random(numbers)]} ${numbers[random(numbers)]}`;
 };
-
-const numbersForGame = randomizeExpressions([4, 6, 8, 9, 12, 18, 24, 25, 30, 42, 48, 50, 100]);
 
 const correctAnswer = (expressionString) => {
   let result = 0;
@@ -29,7 +23,7 @@ const correctAnswer = (expressionString) => {
 };
 
 const gcdGame = () => {
-  gameLogic(gameCondicions, numbersForGame, correctAnswer);
+  gameLogic(gameCondicions, randomizeExpressions, correctAnswer);
 };
 
 export default gcdGame;
