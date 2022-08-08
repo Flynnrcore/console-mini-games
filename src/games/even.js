@@ -4,13 +4,10 @@ import generateRandomNumber from '../lib.js';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
-  const question = generateRandomNumber(1, 99);
-  const isEven = (number) => {
-    const result = number % 2 === 0 ? 'yes' : 'no';
-    return result;
-  };
+  const questionNumber = generateRandomNumber(1, 99);
+  const answer = questionNumber % 2 === 0 ? 'yes' : 'no';
 
-  const result = [question, isEven(question)];
+  const result = [questionNumber, answer];
   return result;
 };
 
