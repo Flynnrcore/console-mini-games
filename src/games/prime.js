@@ -4,10 +4,10 @@ import generateRandomNumber, { isPrime } from '../lib.js';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
-  const questionNumber = generateRandomNumber(1, 19);
-  const answer = isPrime(questionNumber);
+  const question = generateRandomNumber(1, 19);
+  const answer = isPrime(question);
 
-  const result = [questionNumber, answer];
+  const result = [question, answer];
   return result;
 };
 
