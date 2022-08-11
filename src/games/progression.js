@@ -7,7 +7,7 @@ const getProgression = (start, step, length) => {
   const result = [];
 
   for (let count = 0; count < length; count += 1) {
-    result.push(`${start + (step * count)}`);
+    result.push(start + (step * count));
   }
   return result;
 };
@@ -24,8 +24,7 @@ const generateRound = () => {
   const answer = String(question[randomIndex]);
   question[randomIndex] = '..';
 
-  const result = [question.join(' '), answer];
-  return result;
+  return [question.join(' '), answer];
 };
 
 const startProgressionGame = () => {

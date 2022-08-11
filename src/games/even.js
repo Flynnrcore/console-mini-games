@@ -9,8 +9,7 @@ const generateRound = () => {
   const number = generateRandomNumber(1, 99);
   const answer = isEven(number) ? 'yes' : 'no';
 
-  const result = [number, answer];
-  return result;
+  return [number, answer];
 };
 
 const startEvenGame = () => {

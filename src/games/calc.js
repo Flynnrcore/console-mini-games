@@ -25,8 +25,7 @@ const generateRound = () => {
   const question = `${firstNumber} ${operand} ${secondNumber}`;
   const answer = getCalculate(firstNumber, secondNumber, operand);
 
-  const result = [question, String(answer)];
-  return result;
+  return [question, String(answer)];
 };
 
 const startCalculationGame = () => {

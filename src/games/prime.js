@@ -16,8 +16,7 @@ const generateRound = () => {
   const question = generateRandomNumber(1, 19);
   const answer = isPrime(question) ? 'yes' : 'no';
 
-  const result = [question, answer];
-  return result;
+  return [question, answer];
 };
 
 const startPrimeGame = () => {
