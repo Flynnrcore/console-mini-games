@@ -1,23 +1,36 @@
 import startGameplay from '../index.js';
-import generateRandomNumber, { getCalculationExpression } from '../lib.js';
+import generateRandomNumber from '../lib.js';
 
 const description = 'What is the result of the expression?';
 
-const getQuestionAndAnswer = () => {
+const getCalculate = (firstNumber, secondNumber, operand) => {
+  switch (operand) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
+    default:
+      throw new Error(`Unknown operand: '${operand}'!`);
+  }
+};
+
+const generateRound = () => {
   const firstNumber = generateRandomNumber(1, 25);
   const secondNumber = generateRandomNumber(1, 25);
   const operands = ['+', '-', '*'];
   const operand = operands[generateRandomNumber(0, operands.length - 1)];
 
   const question = `${firstNumber} ${operand} ${secondNumber}`;
-  const answer = getCalculationExpression(firstNumber, secondNumber, operand);
+  const answer = getCalculate(firstNumber, secondNumber, operand);
 
-  const result = [question, answer];
+  const result = [question, String(answer)];
   return result;
 };
 
-const startingCalculationGame = () => {
-  startGameplay(description, getQuestionAndAnswer);
+const startCalculationGame = () => {
+  startGameplay(description, generateRound);
 };
 
-export default startingCalculationGame;
+export default startCalculationGame;

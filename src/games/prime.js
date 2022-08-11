@@ -1,18 +1,27 @@
 import startGameplay from '../index.js';
-import generateRandomNumber, { isPrime } from '../lib.js';
+import generateRandomNumber from '../lib.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getQuestionAndAnswer = () => {
+const isPrime = (number) => {
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return number > 1;
+};
+
+const generateRound = () => {
   const question = generateRandomNumber(1, 19);
-  const answer = isPrime(question);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   const result = [question, answer];
   return result;
 };
 
-const startingPrimeGame = () => {
-  startGameplay(description, getQuestionAndAnswer);
+const startPrimeGame = () => {
+  startGameplay(description, generateRound);
 };
 
-export default startingPrimeGame;
+export default startPrimeGame;
