@@ -19,7 +19,7 @@ const generateRound = () => {
 
   const question = getProgression(startNumber, numberStep, progressionLength);
 
-  const randomIndex = generateRandomNumber(1, question.length);
+  const randomIndex = generateRandomNumber(1, question.length - 1);
 
   const answer = String(question[randomIndex]);
   question[randomIndex] = '..';
