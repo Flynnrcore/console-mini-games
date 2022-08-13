@@ -13,11 +13,11 @@ const getProgression = (start, step, length) => {
 };
 
 const generateRound = () => {
-  const startNumber = generateRandomNumber(1, 25);
-  const numberStep = generateRandomNumber(2, 10);
+  const progressionStart = generateRandomNumber(1, 25);
+  const progressionStep = generateRandomNumber(2, 10);
   const progressionLength = generateRandomNumber(5, 10);
 
-  const question = getProgression(startNumber, numberStep, progressionLength);
+  const question = getProgression(progressionStart, progressionStep, progressionLength);
 
   const randomIndex = generateRandomNumber(1, question.length - 1);
 

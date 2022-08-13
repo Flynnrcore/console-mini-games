@@ -9,9 +9,9 @@ const startGameplay = (description, generateRound) => {
 
   const roundsCounter = 3;
   for (let i = 0; i < roundsCounter; i += 1) {
-    const [expression, correctAnswer] = generateRound();
+    const [question, correctAnswer] = generateRound();
 
-    console.log(`Question: ${expression}`);
+    console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
 
